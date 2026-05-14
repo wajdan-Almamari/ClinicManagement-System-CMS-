@@ -1,4 +1,6 @@
-﻿namespace ClinicManagement_System_CMS_
+﻿using System.Xml.Linq;
+
+namespace ClinicManagement_System_CMS_
 {
     internal class Program
     {
@@ -62,27 +64,96 @@
                     Console.Write(" Enter your choice: ");
 
                     int EnterChoiseP = int.Parse(Console.ReadLine());
+                    
                     switch (EnterChoiseP)
                     {
                         //1. Add New Patient 
                         case 1:
-                            
-                            Console.WriteLine("1.Add New Patient");
-                            if (patientCount == MAX_PATIENTS)
-                            {
-                                Console.WriteLine("Clinic is full. Cannot add more patients.");
-                            }
-                            else
-                            {
 
-                            }
+                            bool choise = false;
+                            while (choise ==false)
+                            {
+                                Console.WriteLine("1.Add New Patient");
+                                if (patientCount == MAX_PATIENTS)
+                                {
+                                    Console.WriteLine("Clinic is full. Cannot add more patients.");
+
+                                }
+                                Console.WriteLine("Enter your Name");
+                                string name = Console.ReadLine();
+                                if (name == " ")
+                                {
+                                    Console.WriteLine("error ");
+                                }
+                                Console.WriteLine("Enter your Age");
+                                int age = Convert.ToInt32(Console.ReadLine());
+                                if (age < 1 || age > 120)
+                                {
+                                    Console.WriteLine("error ");
+                                }
+                                Console.WriteLine("Enter your Phone");
+                                string phone = Console.ReadLine();
+                                if (!p1Active)
+                                {
+                                    p1Name = name;
+                                    p1Age = age;
+                                    p1Phone = phone;
+                                    p1Active = true;
+                                }
+                                else if (!p2Active)
+                                {
+                                    p2Name = name;
+                                    p2Age = age;
+                                    p2Phone = phone;
+                                    p2Active = true;
+                                }
+                                else if (!p3Active)
+                                {
+                                    p3Name = name;
+                                    p3Age = age;
+                                    p3Phone = phone;
+                                    p3Active = true;
+                                }
+
+                                patientCount++;
+                                Console.WriteLine("Patient added successfully");
                                 break;
+                                //Console.WriteLine("Enter any key to clear");
+                                //Console.Readline();
+                                //Console.Clear();
+                            }
                         //2. Display All Patients  
                         case 2:
-                            Console.WriteLine();
+                            if (patientCount == 0)
+                            {
+                                Console.WriteLine("No patients registered");
+                                return;
+                            }
+                            else if (p1Active)
+                            {
+                                Console.WriteLine(" p1Name : " + p1Name);
+                                Console.WriteLine(" p1Age : " + p1Age);
+                                Console.WriteLine(" p1Phone : " + p1Phone);
+                            }
+                            else if (p2Active)
+                            {
+                                Console.WriteLine(" p2Name : " + p2Name);
+                                Console.WriteLine(" p2Age : " + p2Age);
+                                Console.WriteLine(" p2Phone : " + p2Phone);
+                            }
+                            else if (p3Active)
+                            {
+                                Console.WriteLine(" p3Name : " +p3Name);
+                                Console.WriteLine(" p3Age : " + p3Age);
+                                Console.WriteLine(" p3Phone : " +p3Phone);
+                            }
+                            
+                            
+
                             break;
                         //3. Update Patient Phone
                         case 3:
+
                             Console.WriteLine();
                             break;
                         //4. Delete Patient
