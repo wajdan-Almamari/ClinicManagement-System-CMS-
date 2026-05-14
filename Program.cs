@@ -4,7 +4,6 @@
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
 
 
             // ── REGION 1: System Storage ───────────────────────────────────── 
@@ -33,7 +32,108 @@
             string a3Patient = ""; string a3Doctor = ""; string a3Date = "";
             string a3Status = ""; bool a3Active = false; int appointmentCount = 0;
 
+            // ── REGION 2: Main Menu   ───────────────────────────────────── 
 
+            Console.WriteLine(" ╔══════════════════════════════════════╗");
+            Console.WriteLine(" ║     CLINIC MANAGEMENT SYSTEM         ║");
+            Console.WriteLine(" ║══════════════════════════════════════╣");
+            Console.WriteLine(" ║  1. Patient Management               ║");              
+            Console.WriteLine(" ║  2. Doctor Management                ║");
+            Console.WriteLine(" ║  3. Appointment Management           ║");
+            Console.WriteLine(" ║  0. Exit                             ║");
+            Console.WriteLine(" ╚══════════════════════════════════════╝");
+            Console.Write(" Enter your choice: ");
+
+            int EnterChoise = int.Parse(Console.ReadLine());
+            
+            switch (EnterChoise)
+            {
+                 //1. Patient Management
+                case 1:
+                    Console.WriteLine(" ╔══════════════════════════════════════╗");
+                    Console.WriteLine(" ║       PATIENT MANAGEMENT             ║");
+                    Console.WriteLine(" ║══════════════════════════════════════╣");
+                    Console.WriteLine(" ║ 1. Add New Patient                   ║");
+                    Console.WriteLine(" ║ 2. Display All Patients              ║");
+                    Console.WriteLine(" ║ 3. Update Patient Phone              ║");
+                    Console.WriteLine(" ║ 4. Delete Patient                    ║");
+                    Console.WriteLine(" ║ 0. Back to Main Men                  ║");
+                    Console.WriteLine(" ╚══════════════════════════════════════╝");
+                    Console.Write(" Enter your choice: ");
+
+                    int EnterChoiseP = int.Parse(Console.ReadLine());
+                    switch (EnterChoiseP)
+                    {
+                        //1. Add New Patient 
+                        case 1:
+                            
+                            Console.WriteLine("1.Add New Patient");
+                            if (patientCount == MAX_PATIENTS)
+                            {
+                                Console.WriteLine("Clinic is full. Cannot add more patients.");
+                            }
+                            else
+                            {
+
+                            }
+                                break;
+                        //2. Display All Patients  
+                        case 2:
+                            Console.WriteLine();
+                            break;
+                        //3. Update Patient Phone
+                        case 3:
+                            Console.WriteLine();
+                            break;
+                        //4. Delete Patient
+                        case 4:
+                            Console.WriteLine();
+                            break;
+                        //0. Back to Main Menu 
+                        case 0:
+                            Console.WriteLine();
+                            break;
+
+                    }//End switch 
+
+                    break;
+                 // 2.Doctor Management
+                case 2:
+             
+                    Console.WriteLine(" ╔══════════════════════════════════════╗");
+                    Console.WriteLine(" ║       DOCTOR MANAGEMENT              ║");
+                    Console.WriteLine(" ║══════════════════════════════════════╣");
+                    Console.WriteLine(" ║ 1. Add New Doctor                    ║");
+                    Console.WriteLine(" ║ 2. Display All Doctors               ║");
+                    Console.WriteLine(" ║ 3. Update Consultation Fee           ║");
+                    Console.WriteLine(" ║ 4. Delete Doctor                     ║");
+                    Console.WriteLine(" ║ 0. Back to Main Men                  ║");
+                    Console.WriteLine(" ╚══════════════════════════════════════╝");
+                    Console.Write(" Enter your choice: ");
+                    int EnterChoiseD = int.Parse(Console.ReadLine());
+
+                    break;
+                 //3.Appointment Management
+                case 3:
+                    Console.WriteLine(" ╔══════════════════════════════════════╗");
+                    Console.WriteLine(" ║       APPOINTMENT MANAGEMENT         ║");
+                    Console.WriteLine(" ║══════════════════════════════════════╣");
+                    Console.WriteLine(" ║ 1. Book New Appointment              ║");
+                    Console.WriteLine(" ║ 2. Display All Appointments          ║");
+                    Console.WriteLine(" ║ 3. Update Appointment Status         ║");
+                    Console.WriteLine(" ║ 4. Cancel Appointment                ║");
+                    Console.WriteLine(" ║ 0. Back to Main Men                  ║");
+                    Console.WriteLine(" ╚══════════════════════════════════════╝");
+                    Console.Write(" Enter your choice: ");
+                    int EnterChoiseA = int.Parse(Console.ReadLine());
+
+                    break;
+                 //0.Exit
+                case 0:
+                    Console.WriteLine();
+                    break;
+
+            }//EndSwitch
 
 
 
