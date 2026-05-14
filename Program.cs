@@ -117,11 +117,12 @@ namespace ClinicManagement_System_CMS_
 
                                 patientCount++;
                                 Console.WriteLine("Patient added successfully");
-                                break;
-                                //Console.WriteLine("Enter any key to clear");
-                                //Console.Readline();
-                                //Console.Clear();
-                            }
+                               
+                                Console.WriteLine("Enter any key to clear");
+                                Console.ReadLine();
+                                Console.Clear();
+                            }//end of while
+                            break;
                         //2. Display All Patients  
                         case 2:
                             if (patientCount == 0)
