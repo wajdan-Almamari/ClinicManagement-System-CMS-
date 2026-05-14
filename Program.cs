@@ -35,7 +35,11 @@ namespace ClinicManagement_System_CMS_
             string a3Status = ""; bool a3Active = false; int appointmentCount = 0;
 
             // ── REGION 2: Main Menu   ───────────────────────────────────── 
+            bool choiceP = false;
+            while (choiceP == false)
+            {
 
+            
             Console.WriteLine(" ╔══════════════════════════════════════╗");
             Console.WriteLine(" ║     CLINIC MANAGEMENT SYSTEM         ║");
             Console.WriteLine(" ║══════════════════════════════════════╣");
@@ -207,8 +211,8 @@ namespace ClinicManagement_System_CMS_
 
             }//EndSwitch
 
-
-
+               
+            }
         }
     }
 }
